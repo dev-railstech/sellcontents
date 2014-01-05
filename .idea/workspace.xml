@@ -138,7 +138,7 @@
       <file leaf-file-name="asset.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/asset.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="53" selection-start="363" selection-end="363" vertical-scroll-proportion="0.2576336">
+            <state line="6" column="2" selection-start="198" selection-end="198" vertical-scroll-proportion="0.17175573">
               <folding />
             </state>
           </provider>
@@ -700,13 +700,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="32" selection-start="80" selection-end="80" vertical-scroll-proportion="0.08226691">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/profile/products.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="120" selection-start="511" selection-end="511" vertical-scroll-proportion="-9.375">
@@ -828,9 +821,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.0.0-p247@global/gems/paperclip-3.5.2/lib/paperclip/validators/attachment_size_validator.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="10" selection-start="3912" selection-end="3912" vertical-scroll-proportion="0.59923667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/asset.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="53" selection-start="363" selection-end="363" vertical-scroll-proportion="0.2576336">
+        <state line="6" column="2" selection-start="198" selection-end="198" vertical-scroll-proportion="0.17175573">
           <folding />
         </state>
       </provider>
