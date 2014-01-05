@@ -31,6 +31,7 @@ class Order < ActiveRecord::Base
   end
 
   def create_stripe_charge
+    set_total
     Stripe::Charge.create({
                               :amount => (self.total * 100).to_i,
                               :currency => 'usd',
