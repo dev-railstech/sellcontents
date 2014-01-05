@@ -69,7 +69,7 @@ SellContent::Application.configure do
   config.paperclip_defaults = {
       :storage => :s3,
       :s3_credentials => {
-          :bucket => "sellcontent",
+          :bucket => "airspace-s3",
           :access_key_id => "AKIAJIMN53AIMGVDPY2A",
           :secret_access_key => "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"
       }

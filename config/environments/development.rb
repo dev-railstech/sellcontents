@@ -35,5 +35,13 @@ SellContent::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_credentials => {
+          :bucket => "airspace-s3",
+          :access_key_id => "AKIAJIMN53AIMGVDPY2A",
+          :secret_access_key => "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"
+      }
+  }
 
 end

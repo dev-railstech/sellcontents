@@ -18,7 +18,7 @@
   <%= javascript_include_tag "application" %>
 </head>
 <body>
-
+<%= render :partial => "layouts/social" %>
 <div class="navbar navbar-fluid-top">
   <div class="navbar-inner">
     <div class="container">
@@ -31,15 +31,15 @@
 
       <div class="container nav-collapse">
         <ul class="nav">
-        <% if current_user %>
+          <% if current_user %>
               <li><%= link_to "Profile", profile_upload_path %></li>
               <li><%= link_to "Products", profile_products_path %></li>
               <li><%= link_to "Sold Orders", profile_sold_orders_path %></li>
               <li><%= link_to "Bought Orders", profile_bought_orders_path %></li>
               <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
-        <% else %>
+          <% else %>
               <li><%= link_to "Login", new_user_session_path %></li>
-        <% end %>
+          <% end %>
         </ul>
       </div>
       <!--/.nav-collapse -->

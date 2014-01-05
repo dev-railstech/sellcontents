@@ -1,3 +1,10 @@
+<div class="well row">
+  <h3>Share This</h3>
+  <%= text_field_tag "url", from_code_url(@product.code), :readonly => true %>
+  <div class="fb-share-button" data-href="<%= from_code_url(@product.code) %>" data-type="button"></div>
+  <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= from_code_url(@product.code) %>" data-text="I am selling online!" data-via="airspace" data-count="none" data-hashtags="airspace">Tweet</a>
+</div>
+
 Cover
 
 <% if @product.image %>
@@ -39,6 +46,7 @@ Content
     <% end %>
     <%= f.submit %>
 <% end %>
+
 
 
 
