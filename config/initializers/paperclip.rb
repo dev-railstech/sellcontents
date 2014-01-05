@@ -3,3 +3,7 @@ Paperclip::Attachment.default_options[:path] = '/:class/:attachment/:id_partitio
 
 Paperclip::Attachment.default_options[:s3_host_name] = 's3-us-west-2.amazonaws.com'
 
+Paperclip.interpolates :filename do |attachment, style|
+  attachment.instance.attachment_file_name
+end
+

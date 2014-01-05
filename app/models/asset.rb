@@ -1,6 +1,5 @@
 class Asset < ActiveRecord::Base
-  attr_accessible :attachment, :type, :viewable_id, :viewable_type,
-                  :code, :name, :price
+  attr_accessible :attachment, :type, :viewable_id, :viewable_type
   belongs_to :viewable, :polymorphic => true
   belongs_to :order
 
