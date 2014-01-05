@@ -2,6 +2,8 @@ class Asset < ActiveRecord::Base
   attr_accessible :attachment, :type, :viewable_id, :viewable_type
   belongs_to :viewable, :polymorphic => true
   belongs_to :order
+  validates_attachment_size :attachment, :less_than => 20.megabytes,
+                            :unless => Proc.new { |m| m[:attachment].nil? }
 
   has_attached_file :attachment
 
