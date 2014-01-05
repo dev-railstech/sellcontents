@@ -1,5 +1,7 @@
 SellContent::Application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   devise_for :users
   root :to => 'home#index'
   get "/checkout/:code" => "home#checkout", :as => :checkout
