@@ -36,7 +36,7 @@ class Order < ActiveRecord::Base
                               :amount => (self.total * 100).to_i,
                               :currency => 'usd',
                               :card => self.stripe_card_token,
-                              :description => "Charge for #{self.title}",
+                              :description => "Charge for #{self.product.name}",
                           })
   rescue Stripe::InvalidRequestError => e
     logger.error("Stripe error while creating charge: #{e.message}")

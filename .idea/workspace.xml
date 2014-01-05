@@ -12,7 +12,7 @@
     <file path="/user.rb" changelist="ac20cfff-589d-429d-895f-d1a12f808d35" time="1388934920191" ignored="false" />
     <file path="/profile_controller.rb" changelist="ac20cfff-589d-429d-895f-d1a12f808d35" time="1388936682215" ignored="false" />
     <file path="/20140105122435_create_assets.rb" changelist="ac20cfff-589d-429d-895f-d1a12f808d35" time="1388937333062" ignored="false" />
-    <file path="/order.rb" changelist="ac20cfff-589d-429d-895f-d1a12f808d35" time="1388935499823" ignored="false" />
+    <file path="/order.rb" changelist="ac20cfff-589d-429d-895f-d1a12f808d35" time="1388939848714" ignored="false" />
     <file path="/20140105125423_create_orders.rb" changelist="ac20cfff-589d-429d-895f-d1a12f808d35" time="1388930772666" ignored="false" />
     <file path="/checkout.html.erb" changelist="ac20cfff-589d-429d-895f-d1a12f808d35" time="1388934309649" ignored="false" />
     <file path="/application.html.erb" changelist="ac20cfff-589d-429d-895f-d1a12f808d35" time="1388939333882" ignored="false" />
@@ -129,7 +129,7 @@
       <file leaf-file-name="order.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/order.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="13" selection-start="833" selection-end="833" vertical-scroll-proportion="0.5706107">
+            <state line="38" column="77" selection-start="1118" selection-end="1118" vertical-scroll-proportion="0.45610687">
               <folding />
             </state>
           </provider>
@@ -861,7 +861,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/order.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="13" selection-start="833" selection-end="833" vertical-scroll-proportion="0.5706107">
+        <state line="38" column="77" selection-start="1118" selection-end="1118" vertical-scroll-proportion="0.45610687">
           <folding />
         </state>
       </provider>
