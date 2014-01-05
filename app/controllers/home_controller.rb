@@ -24,7 +24,7 @@ class HomeController < ApplicationController
       @product = Product.active.find_by_code(params[:code])
       @order.product = @product
       @order.buyer_id = current_user.id
-      if @order.save
+      if @order.save_with_payment
         redirect_to profile_bought_order_path(@order)
       else
         flash[:error] = @order.errors.full_messages.first
