@@ -17,7 +17,7 @@ class Product < ActiveRecord::Base
   def generate_code
     _array = ('a'..'z').to_a + ('A'..'Z').to_a
     sample = _array.sample(5).join
-    while Asset.unscoped.where(:code => sample).present?
+    while Product.unscoped.where(:code => sample).present?
       sample = _array.sample(5).join
     end
     self.code = sample
