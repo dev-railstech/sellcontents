@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  total: 9.99
+  asset_id: 1
+  seller_id: 1
+  buyer_id: 1
+
+two:
+  total: 9.99
+  asset_id: 1
+  seller_id: 1
+  buyer_id: 1

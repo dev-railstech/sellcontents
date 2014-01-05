@@ -1,0 +1,46 @@
+Cover
+
+<% if @product.image %>
+    <div style="width: 400px;">
+      <%= link_to "Remove Cover", profile_product_delete_cover_path(@product.code, @product.image.id), :method => :delete, :confirm => "Are you sure?" %>
+      <%= image_tag @product.image.attachment.url if @product.image %>
+    </div>
+<% else %>
+    <%= form_for @product, :url => profile_product_update_path(@product.code), :method => :put, :html => {id: "", :class => "form-horizontal"} do |f| %>
+        <%= f.fields_for :image, Image.new do |i| %>
+            <%= i.file_field :attachment %>
+        <% end %>
+        <%= f.submit %>
+    <% end %>
+<% end %>
+
+
+Detail
+<%= form_for @product, :url => profile_product_update_path(@product.code), :method => :put, :html => {:class => "form-horizontal"} do |f| %>
+    <%= f.text_field :name, :placeholder => "Name" %>  <br>  <br>
+    <%= f.text_area :description, :placeholder => "Description", :rows => 3 %>  <br>  <br>
+    <%= f.text_field :price, :placeholder => "Price" %>     <br>  <br>
+    <%= f.submit "Update" %>
+<% end %>
+
+
+Content
+
+
+<% @product.contents.each do |c| %>
+    <div class="well" id="<%= c.id %>">
+      <%= c.attachment_file_name %>&nbsp;<%= link_to "Remove", profile_product_delete_content_path(@product.code, c.id), :method => :delete, :confirm => "Are you sure?", :remote => true %>
+    </div>
+<% end %>
+
+<%= form_for @product, :url => profile_product_update_path(@product.code), :method => :put do |f| %>
+    <%= f.fields_for :contents, Content.new do |i| %>
+        <%= i.file_field :attachment %>
+    <% end %>
+    <%= f.submit %>
+<% end %>
+
+
+
+
+

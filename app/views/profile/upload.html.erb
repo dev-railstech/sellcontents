@@ -1,0 +1,15 @@
+<h1>My Profile</h1>
+
+<div class="row">
+  <h3>Create Product</h3>
+  <%= form_for @product, :url => profile_upload_path, :html => {:multipart => true, :class => "form-horizontal"} do |f| %>
+      <%= f.text_field :name, :placeholder => "Name" %>  <br> <br>
+      <%= f.text_field :price, :placeholder => "Price" %>     <br> <br>
+      <%= f.fields_for :contents, Content.new do |c| %>
+          <%= c.file_field :attachment %>
+      <% end %>
+      <%= f.submit "Create" %>
+  <% end %>
+</div>
+
+

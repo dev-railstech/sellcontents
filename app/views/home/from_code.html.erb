@@ -1,0 +1,22 @@
+<div class="row" style="width:400px;">
+  <%= image_tag @product.image.attachment.url if @product.image %>
+</div>
+<div class="row" style="width:400px;">
+  <%= @product.name %>
+</div>
+<div class="row" style="width:400px;">
+  <%= @product.description %>
+</div>
+
+<div class="row">
+  <% @product.contents.each do |c| %>
+      <div class="well" id="<%= c.id %>">
+        <%= c.attachment_file_name %>
+      </div>
+  <% end %>
+</div>
+
+<div class="row">
+  <%= link_to "Buy", checkout_path(@product.code) %>
+</div>
+

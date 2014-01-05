@@ -1,0 +1,13 @@
+<div class="row">
+  <%= link_to from_code_url(@product.code), from_code_path(@product.code) %>   <br>
+  <%= number_to_currency @order.total, :unit => "$" %>
+</div>
+<div class="row">
+  Completed at:
+  <%= @order.updated_at.to_formatted_s(:long) %>
+</div>
+<div class="row">
+  Buyer email:
+  <%= @order.buyer.email %>
+</div>
+<%= link_to "Back", profile_sold_orders_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  viewable_type: MyString
+  viewable_id: 1
+  attachment: 
+  type: 
+
+two:
+  viewable_type: MyString
+  viewable_id: 1
+  attachment: 
+  type: 
