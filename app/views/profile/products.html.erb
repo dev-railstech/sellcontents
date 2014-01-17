@@ -1,21 +1,80 @@
-<h1>My Products</h1>
-<table>
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Price</th>
-    <th></th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @products.each do |product| %>
-      <tr>
-        <td><%= link_to product.name, from_code_path(product.code) %></td>
-        <td><%= number_to_currency product.price, :unit => "$" %></td>
-        <td><%= link_to "Show", profile_product_path(product.code) %> |
-        <%= link_to "Destroy", profile_product_delete_path(product.code), :method => :delete, :confirm => "Are you sure?" %></td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
+<div class="profieldiv">
+  <h6>Product Activity!</h6>
+</div>
+<div class="clearboth"></div>
+<div class="contentmidder bdbot">
 
+  <div class="productnavigation">
+    <ul>
+
+      <li class="active">
+        <a href="#"><span><img src="/assets/all_icon.png" width="26" height="32" alt="All"/></span>All</a>
+      </li>
+      <li><a href="#"><span><img src="/assets/earn.png" width="32" height="32" alt="Sold Item"/></span>Sold Item</a>
+      </li>
+      <li>
+        <a href="#"><span><img src="/assets/flag_icon.png" width="22" height="32" alt="Flag Item"/></span>Flag Item</a>
+      </li>
+      <li>
+        <a href="#"><span><img src="/assets/best_seller.png" width="23" height="32" alt="High Selling Product"/></span>High
+          Selling Product</a></li>
+      <li>
+        <a href="#"><span><img src="/assets/refresh_icon.png" width="32" height="32" alt="Subscription Listing"/></span>Subscription
+          Listing</a></li>
+      <li>
+        <a href="#"><span><img src="/assets/shipped_icon.png" width="32" height="32" alt="Subscription Listing"/></span>Shipped
+          Item</a></li>
+
+    </ul>
+
+  </div>
+
+
+  <div class="table_product">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+      <% @products.each do |product| %>
+          <tr>
+            <td width="64%" align="left" valign="middle" class="tdblock">
+              <img width="56px" style="height: 50px;" src="<%= product.image.try(:attachment).try(:url) %>" class="product_thumb"/>
+
+              <div class="list_prodcutdetails">
+                <div class="titlep"><%= link_to product.name, from_code_path(product.code) %></div>
+                <div class="updated_date">
+                  <!--<div class="datetime"><span class="lightgray">Uploaded in</span> business</div>-->
+                  <div class="datetime">
+                    <img src="/assets/small_watch.png" class="padtop5 "/> &nbsp; &nbsp;<%= product.created_at.to_formatted_s(:long) %>
+                  </div>
+                </div>
+              </div>
+
+              <div class="productstatus"><img src="/assets/earn.png" width="20" height="20" alt="Sold item"/></div>
+            </td>
+
+            <td width="8%" align="center" valign="middle" class="tdblock tdgraytext">
+              <img src="/assets/eye.png"/>
+              1042
+            </td>
+
+            <td width="8%" align="center" valign="middle" class="tdblock tdgraytext">
+              <img src="/assets/like_thumb.png"/> &nbsp;654
+            </td>
+
+            <td width="8%" align="center" valign="middle" class="tdblock tdgraytext">
+              <img src="/assets/down_thum.png"/> &nbsp;135
+            </td>
+
+            <td width="6%" align="center" valign="middle" class="tdblock">
+              <%= link_to '<img src="/assets/download_icon.png"/>'.html_safe, profile_product_path(product.code), :class => "tdicons" %>
+            </td>
+
+            <td width="6%" align="center" valign="middle" class="tdblock">
+
+              <%= link_to '<img src="/assets/setting_icon.png"/>'.html_safe, profile_product_delete_path(product.code), :class => "tdicons", :method => :delete, :confirm => "Are you sure?" %>
+            </td>
+          </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="clearboth"></div>
+</div>

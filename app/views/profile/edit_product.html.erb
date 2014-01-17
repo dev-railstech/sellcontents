@@ -1,54 +1,141 @@
-<div class="well row">
-  <h3>Share This</h3>
-  <%= text_field_tag "url", from_code_url(@product.code), :readonly => true %>
-  <div class="fb-share-button" data-href="<%= from_code_url(@product.code) %>" data-type="button"></div>
-  <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= from_code_url(@product.code) %>" data-text="I am selling online!" data-via="airspace" data-count="none" data-hashtags="airspace">Tweet</a>
+<div class="editinfomaindiv">
+  <div class="editdelisdiv">
+    <!--<div class="editmenu">-->
+    <!--<ul>-->
+    <!--<li><a href="JavaScript:void(0);" class="activ">Edit</a></li>-->
+    <!--<li><a href="JavaScript:void(0);">Options</a></li>-->
+    <!--</ul>-->
+    <!--</div>-->
+    <div class="uploadboxdiv">
+
+
+      <% if @product.image %>
+          <img src="<%= @product.image.attachment.url %>" border="0" alt="" width="100%" height="400px"/>
+          <%#= link_to "Remove Cover", profile_product_delete_cover_path(@product.code, @product.image.id), :method => :delete, :confirm => "Are you sure?" %>
+      <% end %>
+
+      <div class="uplaodshow">
+        <%= form_for @product, :url => profile_product_update_path(@product.code), :method => :put, :html => {id: "", :class => "form-horizontal hide"} do |f| %>
+            <%= f.fields_for :image, Image.new do |i| %>
+                <%= i.file_field :attachment, :id => "cover-photo" %>
+            <% end %>
+        <% end %>
+        <%= link_to "Upload a Cover", "javascript:;", :class => "uploadbgshow trigger-upload", :"data-target" => "cover-photo" %>
+      </div>
+
+
+    </div>
+    <div class="infocontediv">
+
+      <%= form_for @product, :url => profile_product_update_path(@product.code), :method => :put, :html => {:class => "form-horizontal"} do |f| %>
+
+          <div class="headinfo">
+            <div class="infoinputdiv">
+              <%= f.text_field :name, :placeholder => "Info text", :class => "infotxtstye" %>
+            </div>
+            <div class="dolordiv">
+              <div class="dolicondiv">$</div>
+              <div class="">
+                <%= f.text_field :price, :placeholder => "Price", :style => "width: 40px;height: 30px;" %>
+              </div>
+            </div>
+
+          </div>
+          <div class="delitxtarea">
+            <%= f.text_area :description, :placeholder => "Describe this product...", :rows => 3, :class => "desarastyle" %>
+            <%= f.submit "Update", :class => "uploadbgshow" %>
+          </div>
+      <% end %>
+
+    </div>
+
+
+    <div class="infobottomdiv">
+      <% @product.contents.each do |c| %>
+          <div class="infobgremove" id="<%= c.id %>">
+            <%= text_field_tag "", c.attachment_file_name, :readonly => true, :class => "inputinfoshdiv" %>&nbsp;
+            <%= link_to "Remove", profile_product_delete_content_path(@product.code, c.id), :method => :delete, :confirm => "Are you sure?", :remote => true, :class => "removebg" %>
+          </div>
+      <% end %>
+      <div class="upmrofilediv">
+        <%= form_for @product, :url => profile_product_update_path(@product.code), :method => :put, :html => {:class => "hide"} do |f| %>
+            <%= f.fields_for :contents, Content.new do |i| %>
+                <%= i.file_field :attachment, :id => "content-photo" %>
+            <% end %>
+        <% end %>
+
+        <a href="javascript:;" class="trigger-upload" data-target="content-photo">Upload more files</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="rightdivmain">
+    <div class="rightmaterdiv">
+      <div class="rightdelis">
+        <h6>Now</h6>
+
+        <div class="righthead">
+          <div class="righticon"><img src="images/deshround01.jpg" alt="" border="0" width="12" height="12"/></div>
+          <div class="rightxtxt">Drafteds</div>
+        </div>
+        <p>Edit your product and it ready for sale.
+          we highly recommend having a cover a
+          description before launch</p>
+
+        <h6>WHEN PUBLISHED</h6>
+      </div>
+
+      <div class="rightdelis">
+        <div class="righthead">
+          <div class="righticon"><img src="images/deshround02.jpg" alt="" border="0" width="12" height="12"/></div>
+          <div class="rightxtxt">Ready for sale</div>
+        </div>
+        <p>Thet ‘ll be able to purchase it securely, and
+          download it instantly. All you have to do is
+          share it:</p>
+
+        <p>
+          <%= text_field_tag "url", from_code_url(@product.code), :readonly => true, :class => "" %>
+
+        </p>
+
+        <p>
+
+        <div class="fb-share-button" data-href="<%= from_code_url(@product.code) %>" data-type="button"></div>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= from_code_url(@product.code) %>" data-text="I am selling online!" data-via="airspace" data-count="none" data-hashtags="airspace">Tweet</a>
+        </p>
+
+        <h6>AFTER A SALE</h6>
+      </div>
+
+      <div class="rightdelis">
+        <div class="righthead">
+          <div class="righticon"><img src="images/deshround02.jpg" alt="" border="0" width="12" height="12"/></div>
+          <div class="rightxtxt">Send out emails</div>
+        </div>
+        <p>You can email your customers at any time.
+          through Gumroad or by downloading a list
+          of emils.<br/>
+          After updating a product,you can send out
+          a new download link to previous
+          customers.</p>
+
+      </div>
+    </div>
+  </div>
 </div>
 
-Cover
 
-<% if @product.image %>
-    <div style="width: 400px;">
-      <%= link_to "Remove Cover", profile_product_delete_cover_path(@product.code, @product.image.id), :method => :delete, :confirm => "Are you sure?" %>
-      <%= image_tag @product.image.attachment.url if @product.image %>
-    </div>
-<% else %>
-    <%= form_for @product, :url => profile_product_update_path(@product.code), :method => :put, :html => {id: "", :class => "form-horizontal"} do |f| %>
-        <%= f.fields_for :image, Image.new do |i| %>
-            <%= i.file_field :attachment %>
-        <% end %>
-        <%= f.submit %>
-    <% end %>
-<% end %>
+<script>
+    $(function () {
+        $('.trigger-upload').on('click', function () {
+            $('#' + $(this).attr('data-target')).trigger('click');
+        });
 
-
-Detail
-<%= form_for @product, :url => profile_product_update_path(@product.code), :method => :put, :html => {:class => "form-horizontal"} do |f| %>
-    <%= f.text_field :name, :placeholder => "Name" %>  <br>  <br>
-    <%= f.text_area :description, :placeholder => "Description", :rows => 3 %>  <br>  <br>
-    <%= f.text_field :price, :placeholder => "Price" %>     <br>  <br>
-    <%= f.submit "Update" %>
-<% end %>
-
-
-Content
-
-
-<% @product.contents.each do |c| %>
-    <div class="well" id="<%= c.id %>">
-      <%= c.attachment_file_name %>&nbsp;<%= link_to "Remove", profile_product_delete_content_path(@product.code, c.id), :method => :delete, :confirm => "Are you sure?", :remote => true %>
-    </div>
-<% end %>
-
-<%= form_for @product, :url => profile_product_update_path(@product.code), :method => :put do |f| %>
-    <%= f.fields_for :contents, Content.new do |i| %>
-        <%= i.file_field :attachment %>
-    <% end %>
-    <%= f.submit %>
-<% end %>
-
-
-
-
+        $('#cover-photo, #content-photo').on('change', function () {
+            $(this).parent().submit();
+        });
+    })
+</script>
 
 
