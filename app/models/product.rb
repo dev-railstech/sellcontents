@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
   has_many :contents, :as => :viewable
   before_create :generate_code
   accepts_nested_attributes_for :contents, :image, :allow_destroy => true
-
+      belongs_to :user
   def self.active
     where(:deleted_at => nil)
   end

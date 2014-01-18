@@ -231,8 +231,8 @@ website_logo2.png: website_logo2-df55c66e3bd9d7870b9111de595a2c6e.png
 website_logo2/index.png: website_logo2-df55c66e3bd9d7870b9111de595a2c6e.png
 application.js: application-7b67bb3ade7a002166240166f59e3183.js
 application/index.js: application-7b67bb3ade7a002166240166f59e3183.js
-application.css: application-3efb46a18851ffd6e6c327d50735b325.css
-application/index.css: application-3efb46a18851ffd6e6c327d50735b325.css
+application.css: application-a047adfd4a87494015044fd28583d985.css
+application/index.css: application-a047adfd4a87494015044fd28583d985.css
 fonts/ALLER.TTF: fonts/ALLER-303c3483f811e6170f49e22d52cc6ac2.TTF
 fonts/ALLER/index.TTF: fonts/ALLER-303c3483f811e6170f49e22d52cc6ac2.TTF
 fonts/ALLER_BDIT.TTF: fonts/ALLER_BDIT-01ff6d2d492445f645c9f2da62884433.TTF

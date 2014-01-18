@@ -1,17 +1,47 @@
-<h2>Sign in</h2>
+<%= content_for :container_div_class, "memberlogin" %>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+<h6>Sign In</h6>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+<div class="contentmidder bdbot">
+  <div class="forsaveto"><span>Sign in with</span></div>
+  <div class="sharebutton">
+    <a href="#"><img src="/assets/facebook.png" width="126" height="32" alt="Share with Facebook" border="0"/></a>
+    <a href="#"><img src="/assets/twitter.png" width="126" height="32" alt="Share with Twitter" border="0"/></a>
+    <a href="#"><img src="/assets/google_plus.png" width="126" height="32" alt="Share with Google+" border="0"/></a>
 
-  <div><%= f.submit "Sign in" %></div>
+
+    <div class="clearboth"></div>
+  </div>
+
+  <div class="forsaveto"><span>Sign in with your account detail</span></div>
+
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+      <div class="logininput">
+        <%= f.email_field :email, :autofocus => true, :class => "shartabinput", :placeholder => "Email" %>
+      </div>
+
+      <div class="logininput">
+        <%= f.password_field :password, :class => "shartabinput", :placeholder => "Password" %>
+      </div>
+
+
+      <div class="clearboth"><input type="submit" value="&nbsp;Sign In&nbsp;" class="uploastyle2">
+
+        <% if devise_mapping.rememberable? -%>
+            <div class="rememberme">
+              <%= f.check_box :remember_me %> Remember Me<br/>
+              <a href="<%= new_user_password_path %>">Forgot your password?</a>
+            </div>
+        <% end -%>
+      </div>
+
 <% end %>
 
-<%= render "devise/shared/links" %>
+  <div class="clearboth"></div>
+  <div class="donthaveaccount">
+    Don't have an account? <a href="<%= new_user_registration_path %>">Sign up</a>
+  </div>
+</div>
+
+

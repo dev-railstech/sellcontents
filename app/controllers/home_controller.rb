@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   before_filter :authenticate_user!, :only => :checkout
+  layout :action_layout
 
   def index
 
@@ -33,4 +34,11 @@ class HomeController < ApplicationController
     end
   end
 
+  def action_layout
+    if action_name == "from_code"
+      "sell"
+    else
+      "application"
+    end
+  end
 end

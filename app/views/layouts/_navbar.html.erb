@@ -1,0 +1,105 @@
+<% if current_user %>
+    <div class="headericondiv">
+      <ul>
+        <li>
+          <div class="iocntopdiv">
+            <div class="iconshow">
+              <a href="#"><img src="/assets/topicon01.png" border="0" alt="" width="22" height="20"/></a></div>
+            <div class="textshow">
+              <a href="#">Balance</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="iocntopdiv">
+            <div class="iconshow">
+              <a href="#"><img src="/assets/topicon02.png" border="0" alt="" width="22" height="20"/></a></div>
+            <div class="textshow"><%= link_to "Products", profile_products_path %></div>
+          </div>
+        </li>
+
+        <li>
+          <div class="iocntopdiv">
+            <div class="iconshow">
+              <a href="#"><img src="/assets/topicon03.png" border="0" alt="" width="22" height="20"/></a></div>
+            <div class="textshow"><a href="#">Task</a></div>
+          </div>
+        </li>
+
+        <li>
+          <div class="iocntopdiv">
+            <div class="iconshow">
+              <a href="#"><img src="/assets/topicon04.png" border="0" alt="" width="22" height="20"/></a></div>
+            <div class="textshow"><a href="#">Inbox</a></div>
+          </div>
+        </li>
+
+        <li>
+          <div class="iocntopdiv">
+            <div class="iconshow">
+              <a href="#"><img src="/assets/topicon05.png" border="0" alt="" width="22" height="20"/></a></div>
+            <div class="textshow"><a href="#">Reports</a></div>
+          </div>
+        </li>
+
+        <li>
+          <div class="iocntopdiv">
+            <div class="iconshow">
+              <a href="#"><img src="/assets/topicon06.png" border="0" alt="" width="22" height="20"/></a></div>
+            <div class="textshow"><a href="#">Notification</a></div>
+          </div>
+        </li>
+        <li>
+          <div class="iocntopdiv">
+            <div class="iconshow">
+              <a href="#"><img src="/assets/topicon07.png" border="0" alt="" width="22" height="20"/></a></div>
+            <div class="textshow"><a href="#">Settings</a></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="userboxright">
+      <div class="userimgshow">
+        <a href="#">
+          <img src="<%= current_user.gravatar_url %>" border="0" alt="" width="63" height="65" class="circle"/></a>
+      </div>
+      <div class="userdelisdiv">
+
+        <div class="singdiv">
+          <div class="singshowbox">
+            <div class="singicon">
+              <a href="<%= destroy_user_session_path %>" data-method='delete'><img src="/assets/singicon01.png" border="0" alt="" width="15" height="13"/>
+              </a></div>
+            <div class="singtxt"><a href="<%= destroy_user_session_path %>" data-method='delete'>Sign Out</a></div>
+          </div>
+          <div class="singshowbox">
+            <div class="singicon">
+              <a href="#"><img src="/assets/helpicon.png" border="0" alt="" width="13" height="13"/> </a></div>
+            <div class="singtxt"><a href="#">Help</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+<% else %>
+    <div class="headericondiv">
+    </div>
+    <div class="userboxright">
+      <div class="userdelisdiv">
+        <div class="singdiv">
+          <div class="singshowbox">
+            <div class="singicon">
+              <a href="<%= new_user_session_path %>"><img src="/assets/singicon01.png" border="0" alt="" width="15" height="13"/>
+              </a></div>
+            <div class="singtxt"><a href="<%= new_user_session_path %>">Sign In</a></div>
+          </div>
+          <div class="singshowbox">
+            <div class="singicon">
+              <a href="#"><img src="/assets/helpicon.png" border="0" alt="" width="13" height="13"/> </a></div>
+            <div class="singtxt"><a href="#">Help</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>
+

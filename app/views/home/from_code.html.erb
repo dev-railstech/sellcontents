@@ -1,22 +1,66 @@
-<div class="row" style="width:400px;">
-  <%= image_tag @product.image.attachment.url if @product.image %>
-</div>
-<div class="row" style="width:400px;">
-  <%= @product.name %>
-</div>
-<div class="row" style="width:400px;">
-  <%= @product.description %>
+<div class="prodcutimg">
+  <%= image_tag @product.image.attachment.url, :width => "480", :height => "560" if @product.image %>
+  <div class="pricetag"><%= number_to_currency @product.price %></div>
 </div>
 
-<div class="row">
+<div class="prodcut_content">
+  <div class="buyitbutton">
+
+    <%= link_to "Buy it", checkout_path(@product.code), class: "buttonformobile" %>
+    <span> Payments are 100% secure </span>
+
+  </div>
+  <div class="product_detailsell">
+    <h5><%= @product.name %></h5>
+
+    <p class="description"><%= @product.description %></p>
+  </div>
+
+
+  <div class="clearboth"></div>
+</div>
+
+<div class="graysectionblock">
+
+
+  <div class="forsaveto"><span>Contents</span></div>
+
   <% @product.contents.each do |c| %>
-      <div class="well" id="<%= c.id %>">
-        <%= c.attachment_file_name %>
+      <div class="clearboth filetype_size">
+        <p>File: <%= c.attachment_file_name %> &nbsp;&nbsp;|&nbsp;&nbsp;Size: <%= c.attachment_file_size %> KB</p>
       </div>
+
   <% end %>
+
+
+
+  <!--<div class="buttons_mid">-->
+
+
+    <!--<a href="#" class="uploastyle3 disablebut"><img src="/assets/dropbox.png" width="13" height="13" alt="Dropbox"/>&nbsp;Dropbox&nbsp;-->
+    <!--</a>-->
+    <!--<a href="#" class="uploastyle3 disablebut"><img src="/assets/kindle.png" width="13" height="13" alt="Dropbox"/>&nbsp;Kindle&nbsp;-->
+    <!--</a>-->
+    <!--<a href="#" class="uploastyle3 disablebut"><img src="/assets/download_icon2.png" alt="Download"/>&nbsp;Download&nbsp;-->
+    <!--</a>-->
+  <!--</div>-->
+
+  <!--<div class="forsaveto"><span>Send to your kindle...</span></div>-->
+
+  <!--<div class="inputblockrange">-->
+    <!--<input name="" type="text"/>-->
+
+    <!--<div class="totext">@kindle.com</div>-->
+
+
+  <!--</div>-->
+
+  <!--<div class="clearboth"><a href="#" class="buttonformobile">&nbsp;Send&nbsp;</a></div>-->
+
 </div>
 
-<div class="row">
-  <%= link_to "Buy", checkout_path(@product.code) %>
-</div>
+<div class="leftdivlogo"><a href="#"><img src="/assets/logo.png" border="0" alt="" width="37" height="41"/></a></div>
+
+
+<div class="clearboth"></div>
 

@@ -7,7 +7,8 @@
   <%= javascript_include_tag "https://js.stripe.com/v1/" %>
   <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
   <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= javascript_include_tag "application" %></head>
+  <%= javascript_include_tag "application" %>
+</head>
 
 <body>
 <%= render :partial => "layouts/social" %>
@@ -15,102 +16,28 @@
   <div class="headermid">
     <div class="headerdelis">
       <div class="logodiv"><a href="#"><img src="/assets/logo.png" border="0" alt="" width="56" height="57"/></a></div>
-      <div class="headericondiv">
-        <ul>
-
-
-          <li>
-            <div class="iocntopdiv">
-              <div class="iconshow">
-                <a href="#"><img src="/assets/topicon01.png" border="0" alt="" width="22" height="20"/></a></div>
-              <div class="textshow">
-                <a href="#">Balance</a>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="iocntopdiv">
-              <div class="iconshow">
-                <a href="#"><img src="/assets/topicon02.png" border="0" alt="" width="22" height="20"/></a></div>
-              <div class="textshow"><%= link_to "Products", profile_products_path %></div>
-            </div>
-          </li>
-
-          <li>
-            <div class="iocntopdiv">
-              <div class="iconshow">
-                <a href="#"><img src="/assets/topicon03.png" border="0" alt="" width="22" height="20"/></a></div>
-              <div class="textshow"><a href="#">Task</a></div>
-            </div>
-          </li>
-
-          <li>
-            <div class="iocntopdiv">
-              <div class="iconshow">
-                <a href="#"><img src="/assets/topicon04.png" border="0" alt="" width="22" height="20"/></a></div>
-              <div class="textshow"><a href="#">Inbox</a></div>
-            </div>
-          </li>
-
-          <li>
-            <div class="iocntopdiv">
-              <div class="iconshow">
-                <a href="#"><img src="/assets/topicon05.png" border="0" alt="" width="22" height="20"/></a></div>
-              <div class="textshow"><a href="#">Reports</a></div>
-            </div>
-          </li>
-
-          <li>
-            <div class="iocntopdiv">
-              <div class="iconshow">
-                <a href="#"><img src="/assets/topicon06.png" border="0" alt="" width="22" height="20"/></a></div>
-              <div class="textshow"><a href="#">Notification</a></div>
-            </div>
-          </li>
-          <li>
-            <div class="iocntopdiv">
-              <div class="iconshow">
-                <a href="#"><img src="/assets/topicon07.png" border="0" alt="" width="22" height="20"/></a></div>
-              <div class="textshow"><a href="#">Settings</a></div>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="userboxright">
-        <div class="userimgshow">
-          <a href="#"><img src="/assets/userimgtop.png" border="0" alt="" width="63" height="65"/></a></div>
-        <div class="userdelisdiv">
-
-          <div class="singdiv">
-            <div class="singshowbox">
-              <div class="singicon">
-                <a href="#"><img src="/assets/singicon01.png" border="0" alt="" width="15" height="13"/> </a></div>
-              <div class="singtxt"><a href="#">Sign Out</a></div>
-            </div>
-            <div class="singshowbox">
-              <div class="singicon">
-                <a href="#"><img src="/assets/helpicon.png" border="0" alt="" width="13" height="13"/> </a></div>
-              <div class="singtxt"><a href="#">Help</a></div>
-            </div>
+      <%= render :partial => "layouts/navbar" %>
+    </div>
+  </div>
+</div>
+<div class="clearboth"></div>
+<% if @layout == :sell %>
+    <div class="informationdiv2">
+      <%= yield %>
+    </div>
+<% else %>
+    <div class="conntendmid">
+      <div class="contentdelis">
+        <%= bootstrap_flash %>
+        <div class="<%= content_for?(:container_div_class) ? yield(:container_div_class) : 'informationdiv' %>">
+          <div class="<%= content_for?(:container_div_class) ? yield(:container_div_class) : 'productdiv' %>">
+            <%= yield %>
+            <div class="clearboth"></div>
           </div>
         </div>
       </div>
-
-
     </div>
-  </div>
-</div>
-<div class="conntendmid">
-  <div class="contentdelis">
-    <%= bootstrap_flash %>
-    <div class="informationdiv">
-      <div class="productdiv">
-        <%= yield %>
-        <div class="clearboth"></div>
-      </div>
-    </div>
-  </div>
-</div>
+<% end %>
 
 <div class="footerfull">
   <div class="footermid">

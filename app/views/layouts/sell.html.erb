@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title><%= content_for?(:title) ? yield(:title) : "AirSpace" %></title>
+  <%= csrf_meta_tags %>
+  <%= javascript_include_tag "https://js.stripe.com/v1/" %>
+  <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+</head>
+
+<body>
+<div class="warpperfull">
+
+  <div class="userboxright">
+    <div class="userimgshow">
+      <a href="#"><img src="<%= @product.user.gravatar_url %>" border="0" alt="" width="63" height="65" class="circle"/></a>
+    </div>
+    <div class="userdelisdiv">
+
+      <div class="singdiv">
+        <div class="sharingicons">
+          <div class="singicon">
+            <a href="#" class="padicon"><img src="/assets/email_iconbig.png" border="0" alt="" width="28" height="28"/>
+            </a></div>
+          <div class="singicon">
+            <a href="#" class="padicon"><img src="/assets/share_facebook.png" width="28" height="28" alt="Facebook"/>
+            </a></div>
+          <div class="singicon">
+            <a href="#" class="padicon"><img src="/assets/share_twitter.png" border="0" alt="" width="26" height="26"/>
+            </a></div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="clearboth"></div>
+<div class="informationdiv2">
+  <%= yield %>
+</div>
+
+<div class="footerfull">
+  <div class="footermid">
+    <div class="fooermater">2014 &copy; Airspace
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

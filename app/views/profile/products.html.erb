@@ -39,7 +39,7 @@
               <img width="56px" style="height: 50px;" src="<%= product.image.try(:attachment).try(:url) %>" class="product_thumb"/>
 
               <div class="list_prodcutdetails">
-                <div class="titlep"><%= link_to product.name, from_code_path(product.code) %></div>
+                <div class="titlep"><%= link_to product.name, profile_product_path(product.code) %></div>
                 <div class="updated_date">
                   <!--<div class="datetime"><span class="lightgray">Uploaded in</span> business</div>-->
                   <div class="datetime">
@@ -65,12 +65,17 @@
             </td>
 
             <td width="6%" align="center" valign="middle" class="tdblock">
-              <%= link_to '<img src="/assets/download_icon.png"/>'.html_safe, profile_product_path(product.code), :class => "tdicons" %>
+              <div style="display: none;">
+                <% product.contents.each do |c| %>
+                    <%= link_to c.attachment_file_name, c.attachment.url, :class => "product_#{product.id}", :download => c.attachment_file_name %>
+                <% end %>
+              </div>
+              <%= link_to '<img src="/assets/download_icon.png"/>'.html_safe, "javascript:;", :class => "tdicons trigger-download", "data-target" => "product_#{product.id}" %>
             </td>
 
             <td width="6%" align="center" valign="middle" class="tdblock">
-
-              <%= link_to '<img src="/assets/setting_icon.png"/>'.html_safe, profile_product_delete_path(product.code), :class => "tdicons", :method => :delete, :confirm => "Are you sure?" %>
+              <%= link_to 'X', profile_product_delete_path(product.code), :class => "tdicons", :method => :delete, :confirm => "Are you sure?" %>
+              <%#= link_to '<img src="/assets/setting_icon.png"/>'.html_safe, profile_product_path(product.code), :class => "tdicons" %>
             </td>
           </tr>
       <% end %>
@@ -78,3 +83,11 @@
   </div>
   <div class="clearboth"></div>
 </div>
+
+<script>
+    $(function () {
+        $('.trigger-download').on('click', function () {
+           $(this).prev('div').toggle();
+        });
+    })
+</script>

@@ -1767,3 +1767,7 @@ border-radius:5px;}
 .montlyfee .statussub { clear:both; float:none; text-align:left; color:#666;}
 .montlyfee .statussub  span { padding-bottom:5px;}
 
+
+.circle {
+    border-radius: 50%;
+}

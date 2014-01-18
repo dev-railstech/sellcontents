@@ -13,6 +13,13 @@ class User < ActiveRecord::Base
   has_many :bought_orders, :foreign_key => :buyer_id, :class_name => "Order"
 
 
+  def gravatar_url(ava_size = 100)
+    default_url = "mm"
+    gravatar_id = Digest::MD5.hexdigest(self.email.downcase)
+    "http://gravatar.com/avatar/#{gravatar_id}?s=#{ava_size}&d=#{CGI.escape(default_url)}"
+  end
+
+
   def is_admin?
     self.role == 'admin'
   end
