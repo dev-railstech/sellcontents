@@ -1,15 +1,82 @@
-<h1>My Profile</h1>
+<div class="clearboth"></div>
+<div class="settingsblock leftalign">
 
-<div class="row">
-  <h3>Create Product</h3>
+  <h5>Start your product campaign!</h5>
+
+
   <%= form_for @product, :url => profile_upload_path, :html => {:multipart => true, :class => "form-horizontal"} do |f| %>
-      <%= f.text_field :name, :placeholder => "Name" %>  <br> <br>
-      <%= f.text_field :price, :placeholder => "Price" %>     <br> <br>
-      <%= f.fields_for :contents, Content.new do |c| %>
-          <%= c.file_field :attachment %>
-      <% end %>
-      <%= f.submit "Create" %>
-  <% end %>
+
+      <div class="settingsinput whitebg ">
+        <label>Product</label>
+        <%= f.text_field :name, :placeholder => "Header", :class => "shartabinput" %>
+      </div>
+
+      <div class="settingsinput ">
+        <label>File</label>
+        <%= f.fields_for :contents, Content.new do |c| %>
+            <%= c.file_field :attachment %>
+        <% end %>
+      </div>
+
+
+
+
+      <div class="settingsinput whitebg">
+        <label>Description</label>
+        <%= f.text_area :description, :placeholder => "Description...", :class => "shartabinput", style: "height:100px;" %>
+      </div>
+      <div class="settingsinput">
+        <label>Price</label>
+        <div class="dolordiv2">
+          <div class="dolicondiv2"><span class="currencytext">$</span> <span class="arrowdown"></span></div>
+          <div class="dolortxtdiv2">
+            <%= f.text_field :price, :placeholder => "Price" %>
+          </div>
+
+        </div>
+        <div class="clearboth padl150"><input name="" type="checkbox" value=""/> Free</div>
+      </div>
+      <div class="settingsinput bdBnone whitebg">
+        <label>&nbsp;</label>
+        <input type="submit" value="&nbsp;Next&nbsp;" class="uploastyle2">
+      </div>
+<% end %>
+  <div class="clearboth"></div>
 </div>
 
+<div class="iteamlisting">
+  <div class="previewimg"></div>
+  <div class="prodcutimg"><img src="images/prodcut_image.png" width="300" height="257" alt="Product IMG"/></div>
+  <div class="prodcut_content">
+    <h5>Product Heading Goes Here</h5>
 
+    <p>A landmark design from Charles and...</p>
+
+  </div>
+
+  <div class="fulldiv">
+    <div class="priceprduct">
+      <span class="bigtext">$300.00</span>
+      <span class="smalltext">$450.00</span>
+
+    </div>
+
+    <div class="priceprduct">
+      <span class="bigtext">$50.00</span>
+      <span class="smalltext">Post (AU)</span>
+
+    </div>
+
+    <div class="priceprduct last">
+      <span class="bigtext">5</span>
+      <span class="smalltext">Left</span>
+
+    </div>
+
+  </div>
+
+  <div class="prodcutbottom">
+    <input type="button" value="&nbsp;Start Selling&nbsp;" class="uploastyle2">
+  </div>
+
+</div>

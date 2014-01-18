@@ -18,7 +18,7 @@
     <file path="/application.html.erb" changelist="ac20cfff-589d-429d-895f-d1a12f808d35" time="1390044979787" ignored="false" />
     <file path="/20140105122137_devise_create_users.rb" changelist="ac20cfff-589d-429d-895f-d1a12f808d35" time="1388928587615" ignored="false" />
     <file path="/from_code.html.erb" changelist="ac20cfff-589d-429d-895f-d1a12f808d35" time="1390044405207" ignored="false" />
-    <file path="/upload.html.erb" changelist="ac20cfff-589d-429d-895f-d1a12f808d35" time="1388936144255" ignored="false" />
+    <file path="/upload.html.erb" changelist="ac20cfff-589d-429d-895f-d1a12f808d35" time="1390046319038" ignored="false" />
     <file path="/upload.js" changelist="ac20cfff-589d-429d-895f-d1a12f808d35" time="1388929888097" ignored="false" />
     <file path="/checkout.js.coffee" changelist="ac20cfff-589d-429d-895f-d1a12f808d35" time="1388929980074" ignored="false" />
     <file path="/checkout.js" changelist="ac20cfff-589d-429d-895f-d1a12f808d35" time="1388930062361" ignored="false" />
@@ -66,7 +66,9 @@
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="22" column="29" selection-start="947" selection-end="947" vertical-scroll-proportion="-6.875">
-              <folding />
+              <folding>
+                <marker date="1390045055000" expanded="true" signature="951:1496" placeholder="if ... end" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,10 +91,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sell.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="sell.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/sell.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="76" selection-start="1122" selection-end="1122" vertical-scroll-proportion="0.34034416">
+            <state line="26" column="76" selection-start="1122" selection-end="1122" vertical-scroll-proportion="-7.4166665">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="upload.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/profile/upload.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="47" selection-start="1313" selection-end="1313" vertical-scroll-proportion="0.5449331">
               <folding />
             </state>
           </provider>
@@ -102,7 +113,9 @@
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_navbar.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="105" column="0" selection-start="3928" selection-end="3928" vertical-scroll-proportion="-18.041666">
-              <folding />
+              <folding>
+                <marker date="1390045186000" expanded="true" signature="3:3923" placeholder="if ... end" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -129,7 +142,9 @@
         <entry file="file://$PROJECT_DIR$/app/views/home/checkout.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="18" column="29" selection-start="706" selection-end="706" vertical-scroll-proportion="-7.4166665">
-              <folding />
+              <folding>
+                <marker date="1390044786000" expanded="true" signature="230:1474" placeholder="do ... end" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -144,7 +159,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/layouts/application_.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/profile_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/profile/edit_product.html.erb" />
         <option value="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" />
@@ -160,6 +174,7 @@
         <option value="$PROJECT_DIR$/app/views/layouts/_navbar.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/app/views/layouts/sell.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/profile/upload.html.erb" />
       </list>
     </option>
   </component>
@@ -256,29 +271,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sell_content" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sell_content" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
+              <option name="myItemId" value="profile" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -663,14 +656,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1054" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2524013" sideWeight="0.6008359" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39916405" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39916405" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32497388" sideWeight="0.9957333" order="2" side_tool="false" content_ui="tabs" />
@@ -748,13 +741,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/devise/sessions/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="38" selection-start="621" selection-end="623" vertical-scroll-proportion="-10.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/devise/registrations/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="38" selection-start="0" selection-end="1532" vertical-scroll-proportion="-3.75">
@@ -779,9 +765,7 @@
     <entry file="file://$PROJECT_DIR$/app/views/profile/products.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="76" column="28" selection-start="3316" selection-end="3316" vertical-scroll-proportion="0.5449331">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#0;n#table#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -809,7 +793,9 @@
     <entry file="file://$PROJECT_DIR$/app/views/home/checkout.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="29" selection-start="706" selection-end="706" vertical-scroll-proportion="-7.4166665">
-          <folding />
+          <folding>
+            <marker date="1390044786000" expanded="true" signature="230:1474" placeholder="do ... end" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -823,7 +809,9 @@
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="29" selection-start="947" selection-end="947" vertical-scroll-proportion="-6.875">
-          <folding />
+          <folding>
+            <marker date="1390045055000" expanded="true" signature="951:1496" placeholder="if ... end" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -844,7 +832,9 @@
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_navbar.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="105" column="0" selection-start="3928" selection-end="3928" vertical-scroll-proportion="-18.041666">
-          <folding />
+          <folding>
+            <marker date="1390045186000" expanded="true" signature="3:3923" placeholder="if ... end" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -857,7 +847,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/sell.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="76" selection-start="1122" selection-end="1122" vertical-scroll-proportion="0.34034416">
+        <state line="26" column="76" selection-start="1122" selection-end="1122" vertical-scroll-proportion="-7.4166665">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/profile/upload.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="47" selection-start="1313" selection-end="1313" vertical-scroll-proportion="0.5449331">
           <folding />
         </state>
       </provider>
