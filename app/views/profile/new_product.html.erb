@@ -126,21 +126,21 @@
         readURL(this);
     });
 
-    $("#product_name").focusout(function(){
+    $("#product_name").keyup(function(){
         $("#product_title_preview").html($(this).val());
     })
 
-    $("#product_description").focusout(function(){
+    $("#product_description").keyup(function(){
         $("#product_description_preview").html($(this).val());
     })
 
-    $("#product_price").focusout(function(){
+    $("#product_price").keyup(function(){
         $("#price_1_preview").html($(this).val() + '$');
         $("#price_2_preview").html($(this).val() + '$');
         $("#price_3_preview").html($(this).val() + '$');
     })
 
-    $("#product_quantity").focusout(function(){
+    $("#product_quantity").keyup(function(){
         $("#quantity_preview").html($(this).val());
     })
 
