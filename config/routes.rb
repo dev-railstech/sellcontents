@@ -18,6 +18,8 @@ SellContent::Application.routes.draw do
   delete '/profile/c/:code/save_cover/:id' => "profile#delete_cover", :as => :profile_product_delete_cover
 
   get '/profile/products' => "profile#products", :as => :profile_products
+  get 'profile/products/new' => "profile#new_product" , :as => :new_profile_product
+  post 'profile/products/create' => "profile#create_product" , :as => :create_profile_product
 
   get '/profile/bought_orders' => "profile#bought_orders", :as => :profile_bought_orders
   get '/profile/sold_orders' => "profile#sold_orders", :as => :profile_sold_orders

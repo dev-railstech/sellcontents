@@ -1,6 +1,7 @@
 class Product < ActiveRecord::Base
   attr_accessible :code, :description, :name, :price, :user_id, :contents_attributes,
-                  :image_attributes, :deleted_at
+                  :image_attributes, :deleted_at , :product_type  , :free , :quantity , :share_link,
+                  :shipping_option , :privacy_option
   has_one :image, :as => :viewable
   has_many :contents, :as => :viewable
   before_create :generate_code

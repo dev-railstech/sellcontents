@@ -6,6 +6,15 @@ class ProfileController < ApplicationController
     @products = current_user.products.active
   end
 
+  def new_product
+    @product = Product.new
+  end
+
+  def create_product
+    @product = Product.create params[:product]
+    redirect_to profile_products_path
+  end
+
   #Saves new uploaded attachment
   def upload
     if request.get?

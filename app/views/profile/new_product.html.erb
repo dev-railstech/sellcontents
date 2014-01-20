@@ -1,0 +1,96 @@
+<%= form_for @product, :url => create_profile_product_path, :html => {:multipart => true, :class => "form-horizontal"} do |f| %>
+        <%= f.hidden_field :user_id , :value => current_user.id %>
+        <div class="clearboth"></div>
+        <div class="settingsblock leftalign">
+          <h5>Start your product campaign!</h5>
+          <div class="settingsinput whitebg ">
+            <label>Product</label>
+            <%= f.text_field :name , :class => 'shartabinput' %>
+
+          </div>
+          <div class="settingsinput ">
+            <label>Product Type</label>
+            <%= select_tag :product_type , options_for_select([['Physical','physical'],['Digital','digital']]), :style => "width:310px;"  %>
+
+          </div>
+          <div class="settingsinput whitebg">
+            <div class="uploadimage textaligncenter">
+              <%= f.fields_for :contents, Content.new do |c| %>
+                  <%= c.file_field :attachment %>
+              <% end %>
+              <!--<img src="<%= asset_path('box_logo.png') %>" width="65" height="66" alt="Box" />  -->
+              <div class="clearboth"></div>
+            </div>
+            <!--<div class="progressbarcode">
+              <span class="imagename">mypic.png</span>
+              <span class="progressper">80%</span>
+              <div class="progressbar">
+                <span class="barprocess"></span>
+              </div>
+            </div>-->
+          </div>
+          <div class="settingsinput">
+            <label>Description</label>
+            <%= f.text_area :description , :class => "shartabinput" , :style => "height:100px;" %>
+          </div>
+          <div class="settingsinput whitebg">
+            <label>Price</label>
+            <div class="dolordiv2">
+              <div class="dolicondiv2"><span class="currencytext">$</span> <span class="arrowdown"></span> </div>
+              <div class="dolortxtdiv2">
+                <%= f.text_field :price , :size => "5" , :maxlength => "5" %>
+
+              </div>
+            </div>
+            <div class="clearboth padl150"><%= f.check_box :free %> Free</div>
+          </div>
+          <div class="settingsinput ">
+            <label>Share this link to sell</label>
+            <%= f.text_field :share_link , :class=>"shartabinput" %>
+          </div>
+          <div class="settingsinput whitebg">
+            <a href="#" class="moreoptions openstate">More Options</a>
+            <span class="graytext">Privacy, Shipping & Quantity </span>
+            <div class="commanblock">   <label>Privacy</label>
+              <%= select_tag :privacy_option , options_for_select([['Private','private'],['Confidentail','confidential'],['Open','open']]), :style => "width:310px;"  %>
+            </div>
+            <div class="commanblock">   <label>Shipping</label>
+              <%= select_tag :shipping_option , options_for_select([['Cargo','cargo'],['DHL','dhl'],['Cash On Delivery','cash_on_delivery']]), :style => "width:310px;"  %>
+            </div>
+            <div class="commanblock">   <label>Quantity</label>
+              <%= f.text_field :quantity , :class=>"shartabinput quantityblock" %>
+            </div>
+          </div>
+          <div class="settingsinput bdBnone">
+            <label>&nbsp;</label>
+            <input type="submit" value="&nbsp;Next&nbsp;" class="uploastyle2">
+            <input type="button" value="&nbsp;Cancel&nbsp;" class="uploastyle3">
+          </div>
+          <div class="clearboth"></div>
+        </div>
+ <% end %>
+        <div class="iteamlisting">
+          <div class="previewimg"></div>
+          <div class="prodcutimg"><img src="<%= asset_path('prodcut_image.png') %>" width="300" height="257" alt="Product IMG" /></div>
+          <div class="prodcut_content">
+            <h5>Product Heading Goes Here</h5>
+            <p>A landmark design from Charles and...</p>
+          </div>
+          <div class="fulldiv">
+            <div class="priceprduct">
+              <span class="bigtext">$300.00</span>
+              <span class="smalltext">$450.00</span>
+            </div>
+            <div class="priceprduct">
+              <span class="bigtext">$50.00</span>
+              <span class="smalltext">Post (AU)</span>
+            </div>
+            <div class="priceprduct last">
+              <span class="bigtext">5</span>
+              <span class="smalltext">Left</span>
+            </div>
+          </div>
+          <div class="prodcutbottom">
+            <input type="button" value="&nbsp;Start Selling&nbsp;" class="uploastyle2">
+          </div>
+        </div>

@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require jquery-fileupload/basic
+//= require jquery-fileupload
 //= require dropzone
 //= require_tree .
 
