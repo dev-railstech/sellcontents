@@ -1785,7 +1785,7 @@ border-radius:5px;}
 }
 
 .uploadimage #product_contents_attributes_0_attachment:hover {
-    opacity: 0.5;
+    opacity: 0;
 }
 
 .uploadimage img {
