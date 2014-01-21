@@ -26,6 +26,8 @@ group :assets do
 
 end
 
+gem 'pry'
+
 gem 'jquery-rails'
 
 gem 'devise'

@@ -44,23 +44,27 @@
             </div>
             <div class="clearboth padl150"><%= f.check_box :free %> Free</div>
           </div>
-          <div class="settingsinput ">
+          <!--<div class="settingsinput ">
             <label>Share this link to sell</label>
-            <%= f.text_field :share_link , :class=>"shartabinput" %>
-          </div>
+            <%#= f.text_field :share_link , :class=>"shartabinput" %>
+          </div>-->
           <div class="settingsinput whitebg">
             <a href="#" class="moreoptions openstate">More Options</a>
-            <span class="graytext">Privacy, Shipping & Quantity </span>
-            <div class="commanblock">   <label>Privacy</label>
-              <%= select_tag :privacy_option , options_for_select([['Private','private'],['Confidentail','confidential'],['Open','open']]), :style => "width:310px;"  %>
-            </div>
+            <span class="graytext">Shipping & Quantity </span>
+         <!--   <div class="commanblock">   <label>Privacy</label>
+              <%#= select_tag :privacy_option , options_for_select([['Private','private'],['Confidentail','confidential'],['Open','open']]), :style => "width:310px;"  %>
+            </div> -->
             <div class="commanblock">   <label>Shipping</label>
-              <%= select_tag :shipping_option , options_for_select([['Cargo','cargo'],['DHL','dhl'],['Cash On Delivery','cash_on_delivery']]), :style => "width:310px;"  %>
+              <%= select_tag :shipping_option , options_for_select([['Yes','yes'],['No','no']]), :style => "width:310px;"  %>
             </div>
             <div class="commanblock">   <label>Quantity</label>
-              <%= f.text_field :quantity , :class=>"shartabinput quantityblock" %>
+              <div class="dolortxtdiv2" style="border: 1px solid #999999">
+                <%= f.text_field :quantity , :size => "5" , :maxlength => "5" %>
+
+              </div>
             </div>
           </div>
+          <%= f.hidden_field :code , :value => @product.code %>
           <div class="settingsinput bdBnone">
             <label>&nbsp;</label>
             <input type="submit" value="&nbsp;Next&nbsp;" class="uploastyle2">
@@ -78,17 +82,28 @@
           </div>
           <div class="fulldiv">
             <div class="priceprduct">
-              <span class="bigtext" id="price_1_preview">$300.00</span>
-              <span class="smalltext" id="price_2_preview">$450.00</span>
+              <span class="bigtext" id="price_1_preview">$0</span>
+              <span class="smalltext" id="price_2_preview">$0</span>
             </div>
             <div class="priceprduct">
-              <span class="bigtext" id="price_3_preview">$50.00</span>
+              <span class="bigtext" id="price_3_preview">$0</span>
               <span class="smalltext">Post (AU)</span>
             </div>
             <div class="priceprduct last">
-              <span class="bigtext" id="quantity_preview">5</span>
+              <span class="bigtext" id="quantity_preview">0</span>
               <span class="smalltext">Left</span>
             </div>
+          </div>
+          <div class="clearfix"></div>
+          <hr/>
+          <div class="prodcutbottom" >
+            <%=  link_to from_code_url(@product.code),from_code_url(@product.code) %>
+            <br/>
+            <div class="fb-share-button" data-href="<%= from_code_url(@product.code) %>" data-type="button"></div>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= from_code_url(@product.code) %>" data-text="I am selling online!" data-via="airspace" data-count="none" data-hashtags="airspace">Tweet</a>
+            <a href="mailto:?subject=I am selling using airspace&body=<%= from_code_url(@product.code) %>">
+              <img src="<%= asset_path('email.png') %>" style="height: 20px;margin-top: -15px;"/>
+            </a>
           </div>
           <div class="prodcutbottom">
             <input type="button" value="&nbsp;Start Selling&nbsp;" class="uploastyle2">
@@ -135,9 +150,9 @@
     })
 
     $("#product_price").keyup(function(){
-        $("#price_1_preview").html($(this).val() + '$');
-        $("#price_2_preview").html($(this).val() + '$');
-        $("#price_3_preview").html($(this).val() + '$');
+        $("#price_1_preview").html('$' + $(this).val());
+        $("#price_2_preview").html('$' + $(this).val());
+        $("#price_3_preview").html('$' + $(this).val());
     })
 
     $("#product_quantity").keyup(function(){

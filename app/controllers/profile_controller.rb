@@ -8,10 +8,19 @@ class ProfileController < ApplicationController
 
   def new_product
     @product = Product.new
+    @product.generate_code
   end
 
   def create_product
     @product = Product.create params[:product]
+
+    file = File.open("#{Rails.root}/public/cover.png")
+    image = Image.new
+    image.attachment = file
+    image.save
+    @product.image = image
+
+    @product.save
     redirect_to profile_products_path
   end
 

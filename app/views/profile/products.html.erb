@@ -40,7 +40,7 @@
               <img width="56px" style="height: 50px;" src="<%= product.image.try(:attachment).try(:url) %>" class="product_thumb"/>
 
               <div class="list_prodcutdetails">
-                <div class="titlep"><%= link_to product.name, profile_product_path(product.code) %></div>
+                <div class="titlep"><%= link_to product.name, profile_product_path(product.code) rescue product.name %></div>
                 <div class="updated_date">
                   <!--<div class="datetime"><span class="lightgray">Uploaded in</span> business</div>-->
                   <div class="datetime">
@@ -75,7 +75,7 @@
             </td>
 
             <td width="6%" align="center" valign="middle" class="tdblock">
-              <%= link_to 'X', profile_product_delete_path(product.code), :class => "tdicons", :method => :delete, :confirm => "Are you sure?" %>
+              <%= link_to 'X', profile_product_delete_path(product.code), :class => "tdicons", :method => :delete, :confirm => "Are you sure?" rescue 'X' %>
               <%#= link_to '<img src="/assets/setting_icon.png"/>'.html_safe, profile_product_path(product.code), :class => "tdicons" %>
             </td>
           </tr>

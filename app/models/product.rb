@@ -4,15 +4,14 @@ class Product < ActiveRecord::Base
                   :shipping_option , :privacy_option
   has_one :image, :as => :viewable
   has_many :contents, :as => :viewable
-  before_create :generate_code
+  #before_create :generate_code
   accepts_nested_attributes_for :contents, :image, :allow_destroy => true
       belongs_to :user
   def self.active
     where(:deleted_at => nil)
   end
 
-  private
-
+  #private
 
   #Generates unique code
   def generate_code
