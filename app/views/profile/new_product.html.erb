@@ -18,7 +18,7 @@
               <%= f.fields_for :contents, Content.new do |c| %>
                   <%= c.file_field :attachment %>
               <% end %>
-              <!-- <img src="<%= asset_path('box_logo.png') %>" width="65" height="66" alt="Box" /> -->
+              <img src="<%= asset_path('cloud.png') %>" width="65" height="66" alt="Box" />
               <div class="clearboth"></div>
             </div>
             <div class="progressbarcode">
@@ -67,8 +67,8 @@
           <%= f.hidden_field :code , :value => @product.code %>
           <div class="settingsinput bdBnone">
             <label>&nbsp;</label>
-            <input type="submit" value="&nbsp;Next&nbsp;" class="uploastyle2">
-            <input type="button" value="&nbsp;Cancel&nbsp;" class="uploastyle3">
+            <input type="submit" value="&nbsp;Broadcast&nbsp;" class="uploastyle2">
+
           </div>
           <div class="clearboth"></div>
         </div>
@@ -100,14 +100,14 @@
             <%=  link_to from_code_url(@product.code),from_code_url(@product.code) %>
             <br/>
             <div class="fb-share-button" data-href="<%= from_code_url(@product.code) %>" data-type="button"></div>
-            <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= from_code_url(@product.code) %>" data-text="I am selling online!" data-via="airspace" data-count="none" data-hashtags="airspace">Tweet</a>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= from_code_url(@product.code) %>" data-text="I am selling online!" data-via="airspace" data-count="none" data-hashtags="airspace"></a>
             <a href="mailto:?subject=I am selling using airspace&body=<%= from_code_url(@product.code) %>">
               <img src="<%= asset_path('email.png') %>" style="height: 20px;margin-top: -15px;"/>
             </a>
           </div>
-          <div class="prodcutbottom">
+          <!-- <div class="prodcutbottom">
             <input type="button" value="&nbsp;Start Selling&nbsp;" class="uploastyle2">
-          </div>
+          </div> -->
         </div>
 
 <script>
