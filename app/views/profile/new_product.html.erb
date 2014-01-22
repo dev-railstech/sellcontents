@@ -30,7 +30,7 @@
                 </div>
                 <div class="settingsinput">
                   <label>Cover Name</label>
-                  <%= c.text_field :cover_name , :style => '' %>
+                  <%= c.text_field :cover_name , :style => '' %><%= image_tag(asset_path("less_icon.png"), :id => "remove_attachment" , :style => "display:none;") %>
                 </div>
               </div>
           <% end %>
@@ -74,7 +74,7 @@
           <div class="settingsinput bdBnone">
             <label>&nbsp;</label>
             <input type="submit" value="&nbsp;Broadcast&nbsp;" class="uploastyle2">
-
+            <input type="button" value="&nbsp;Cancel&nbsp;" class="uploastyle3">
           </div>
           <div class="clearboth"></div>
         </div>
@@ -143,6 +143,16 @@
         }
     }
 
+    $("#remove_attachment").on("click",function(){
+        var fieldSpan = $('#myfileinput');
+        fieldSpan.html(fieldSpan.html());
+        $("#remove_attachment").hide();
+        $('#product_preview_img').attr('src', "<%= asset_path('cover.png') %>");
+        $(".barprocess").width("0%");
+        $("#progress_percentage").html("0%");
+        $("#product_contents_attributes_0_cover_name").val("");
+    })
+
     $("#product_contents_attributes_0_attachment").change(function(){
         var fullPath = document.getElementById('product_contents_attributes_0_attachment').value;
         if (fullPath) {
@@ -153,6 +163,7 @@
             }
             console.log(filename);
             $("#product_contents_attributes_0_cover_name").val(filename);
+            $("#remove_attachment").show();
         }
         $(".barprocess").width("0%");
         $("#progress_percentage").html("0%");
