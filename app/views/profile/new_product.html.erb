@@ -135,11 +135,16 @@
     $("#product_contents_attributes_0_attachment").change(function(){
         $(".barprocess").width("0%");
         $("#progress_percentage").html("0%");
-        //setTimeout(function(){$("#progress_percentage").html("25%");$(".barprocess").width("25%");},350);
-        //setTimeout(function(){$("#progress_percentage").html("50%");$(".barprocess").width("50%");},600);
-        //setTimeout(function(){$("#progress_percentage").html("75%");$(".barprocess").width("75%");},950);
-        //setTimeout(function(){$("#progress_percentage").html("100%");$(".barprocess").width("100%");},1300);
-        readURL(this);
+        if (typeof FileReader !== "undefined"){
+            setTimeout(function(){$("#progress_percentage").html("25%");$(".barprocess").width("25%");},250);
+            setTimeout(function(){$("#progress_percentage").html("50%");$(".barprocess").width("50%");},400);
+            setTimeout(function(){$("#progress_percentage").html("75%");$(".barprocess").width("75%");},750);
+            setTimeout(function(){$("#progress_percentage").html("100%");$(".barprocess").width("100%");},1100);
+
+        } else {
+
+            readURL(this);
+        }
     });
 
     $("#product_name").keyup(function(){
