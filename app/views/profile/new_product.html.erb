@@ -13,21 +13,27 @@
             <%= select_tag :product_type , options_for_select([['Physical','physical'],['Digital','digital']]), :style => "width:310px;"  %>
 
           </div>
-          <div class="settingsinput whitebg">
-            <div class="uploadimage textaligncenter" style="background: url(<%= asset_path('cloud.png') %>) no-repeat;background-size:50px 40px;width:50px;margin: auto;">
-              <%= f.fields_for :contents, Content.new do |c| %>
-                  <%= c.file_field :attachment , :style => "filter: alpha(opacity=0);opacity: 0;" %>
-              <% end %>
-              <div class="clearfix"></div>
-            </div>
-            <div class="progressbarcode">
-              <span class="imagename"></span>
-              <span class="progressper" id="progress_percentage">0%</span>
-              <div class="progressbar">
-                <span class="barprocess"></span>
+          <%= f.fields_for :contents, Content.new do |c| %>
+
+              <div class="settingsinput whitebg">
+                <div class="uploadimage textaligncenter" style="background: url(<%= asset_path('cloud.png') %>) no-repeat;background-size:50px 40px;width:50px;margin: auto;">
+                      <%= c.file_field :attachment , :style => "filter: alpha(opacity=0);opacity: 0;" %>
+
+                  <div class="clearfix"></div>
+                </div>
+                <div class="progressbarcode">
+                  <span class="imagename"></span>
+                  <span class="progressper" id="progress_percentage">0%</span>
+                  <div class="progressbar">
+                    <span class="barprocess"></span>
+                  </div>
+                </div>
+                <div class="settingsinput">
+                  <label>Cover Name</label>
+                  <%= c.text_field :cover_name , :style => '' %>
+                </div>
               </div>
-            </div>
-          </div>
+          <% end %>
           <!-- cloud png image added -->
           <div class="settingsinput">
             <label>Description</label>
@@ -117,11 +123,16 @@
         if (input.files && input.files[0]) {
             var reader = new FileReader();
 
-            reader.onprogress = function(e){
-                var val = parseInt(e.loaded / e.total)* 100;
-                $("#progress_percentage").html(val + "%");
-                $(".barprocess").width(val + "%");
-            }
+            //reader.onprogress = function(e){
+            //    var val = parseInt(e.loaded / e.total)* 100;
+            //    $("#progress_percentage").html(val + "%");
+            //    $(".barprocess").width(val + "%");
+            //}
+            setTimeout(function(){$("#progress_percentage").html("25%");$(".barprocess").width("25%");},250);
+            setTimeout(function(){$("#progress_percentage").html("50%");$(".barprocess").width("50%");},400);
+            setTimeout(function(){$("#progress_percentage").html("75%");$(".barprocess").width("75%");},750);
+            setTimeout(function(){$("#progress_percentage").html("100%");$(".barprocess").width("100%");},1100);
+
 
             reader.onload = function (e) {
                 $('#product_preview_img').attr('src', e.target.result);
@@ -133,19 +144,21 @@
     }
 
     $("#product_contents_attributes_0_attachment").change(function(){
-        console.log(this.files)
+        var fullPath = document.getElementById('product_contents_attributes_0_attachment').value;
+        if (fullPath) {
+            var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+            var filename = fullPath.substring(startIndex);
+            if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+                filename = filename.substring(1);
+            }
+            console.log(filename);
+            $("#product_contents_attributes_0_cover_name").val(filename);
+        }
         $(".barprocess").width("0%");
         $("#progress_percentage").html("0%");
-        if (typeof FileReader !== "undefined"){
-            setTimeout(function(){$("#progress_percentage").html("25%");$(".barprocess").width("25%");},250);
-            setTimeout(function(){$("#progress_percentage").html("50%");$(".barprocess").width("50%");},400);
-            setTimeout(function(){$("#progress_percentage").html("75%");$(".barprocess").width("75%");},750);
-            setTimeout(function(){$("#progress_percentage").html("100%");$(".barprocess").width("100%");},1100);
 
-        } else {
+        readURL(this);
 
-            readURL(this);
-        }
     });
 
     $("#product_name").keyup(function(){
