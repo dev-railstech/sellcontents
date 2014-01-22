@@ -14,12 +14,11 @@
 
           </div>
           <div class="settingsinput whitebg">
-            <div class="uploadimage textaligncenter">
+            <div class="uploadimage textaligncenter" style="background: url(<%= asset_path('cloud.png') %>) no-repeat;background-size:50px 40px;width:50px;margin: auto;">
               <%= f.fields_for :contents, Content.new do |c| %>
-                  <%= c.file_field :attachment %>
+                  <%= c.file_field :attachment , :style => "filter: alpha(opacity=0);opacity: 0;" %>
               <% end %>
-              <img src="<%= asset_path('cloud.png') %>" width="65" height="66" alt="Box" />
-              <div class="clearboth"></div>
+              <div class="clearfix"></div>
             </div>
             <div class="progressbarcode">
               <span class="imagename"></span>
