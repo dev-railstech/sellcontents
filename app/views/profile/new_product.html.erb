@@ -124,7 +124,7 @@
             }
 
             reader.onload = function (e) {
-                //$('#product_preview_img').attr('src', e.target.result);
+                $('#product_preview_img').attr('src', e.target.result);
             }
 
 
@@ -133,6 +133,7 @@
     }
 
     $("#product_contents_attributes_0_attachment").change(function(){
+        console.log(this.files)
         $(".barprocess").width("0%");
         $("#progress_percentage").html("0%");
         if (typeof FileReader !== "undefined"){
