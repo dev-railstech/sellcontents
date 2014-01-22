@@ -32,10 +32,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new_product.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="new_product.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/profile/new_product.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="98" selection-start="3987" selection-end="3987" vertical-scroll-proportion="0.2827225" vertical-offset="1130" max-vertical-offset="3417">
+            <state line="106" column="106" selection-start="5386" selection-end="5413" vertical-scroll-proportion="-3.372549" vertical-offset="1630" max-vertical-offset="3417">
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#5;n#div#2;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#a#1;n#div#5;n#div#2;n#!!top" expanded="true" />
@@ -53,10 +53,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile_controller.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="profile_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/profile_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="20" selection-start="817" selection-end="817" vertical-scroll-proportion="8.92" vertical-offset="767" max-vertical-offset="2108">
+            <state line="23" column="43" selection-start="542" selection-end="542" vertical-scroll-proportion="0.26960784" vertical-offset="226" max-vertical-offset="2108">
               <folding />
             </state>
           </provider>
@@ -113,8 +113,8 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/app/models/asset.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140122191052_add_cover_name_field_to_assets.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/profile_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/profile/new_product.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/profile_controller.rb" />
       </list>
     </option>
   </component>
@@ -736,13 +736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/profile_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="20" selection-start="817" selection-end="817" vertical-scroll-proportion="8.92" vertical-offset="767" max-vertical-offset="2108">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="85" selection-start="1597" selection-end="1597" vertical-scroll-proportion="-19.04" vertical-offset="17" max-vertical-offset="1632">
@@ -759,11 +752,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/profile/new_product.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="98" selection-start="3987" selection-end="3987" vertical-scroll-proportion="0.2827225" vertical-offset="1130" max-vertical-offset="3417">
+        <state line="106" column="106" selection-start="5386" selection-end="5413" vertical-scroll-proportion="-3.372549" vertical-offset="1630" max-vertical-offset="3417">
           <folding>
             <element signature="n#style#0;n#span#0;n#div#5;n#div#2;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#a#1;n#div#5;n#div#2;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/profile_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="43" selection-start="542" selection-end="542" vertical-scroll-proportion="0.26960784" vertical-offset="226" max-vertical-offset="2108">
+          <folding />
         </state>
       </provider>
     </entry>
