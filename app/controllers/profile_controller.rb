@@ -21,7 +21,7 @@ class ProfileController < ApplicationController
     @product.image = image
 
     @product.save
-    redirect_to profile_products_path
+    redirect_to profile_product_path(@product.code), :notice => "Congrts, your product is created successfully"
   end
 
   #Saves new uploaded attachment
