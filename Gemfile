@@ -26,6 +26,8 @@ group :assets do
 
 end
 
+gem 'remotipart', '~> 1.2'
+
 gem 'pry'
 
 gem 'jquery-rails'

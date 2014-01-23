@@ -223,6 +223,7 @@ DEPENDENCIES
   rails (= 3.2.13)
   rails_admin
   ransack
+  remotipart (~> 1.2)
   sass-rails (~> 3.2.3)
   sqlite3
   state_machine

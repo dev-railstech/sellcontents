@@ -1,5 +1,10 @@
 <div class="prodcutimg">
-  <%= image_tag @product.image.attachment.url, :width => "480", :height => "560" if @product.image %>
+
+  <% if @product.contents.first.attachment.content_type and @product.contents.first.attachment.content_type.include?("image") %>
+      <%= image_tag  @product.contents.first.attachment.url, :width => "480", :height => "560" %>
+<% else %>
+      <%= image_tag @product.image.attachment.url, :width => "480", :height => "560" if @product.image %>
+<% end %>
   <div class="pricetag"><%= number_to_currency @product.price %></div>
 </div>
 

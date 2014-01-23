@@ -1,8 +1,8 @@
-<%= form_for @product, :url => create_profile_product_path, :html => {:multipart => true, :class => "form-horizontal"} do |f| %>
+<%= form_for @product, :url => create_profile_product_path, :remote => true , :html => {:multipart => true, :class => "form-horizontal"} do |f| %>
         <%= f.hidden_field :user_id , :value => current_user.id %>
         <div class="clearboth"></div>
         <div class="settingsblock leftalign">
-          <h5>Start your product campaign!</h5>
+          <h5 id="page_heading">Start your product campaign!</h5>
           <div class="settingsinput whitebg ">
             <label>Product</label>
             <%= f.text_field :name , :class => 'shartabinput' %>
@@ -11,7 +11,6 @@
           <div class="settingsinput ">
             <label>Product Type</label>
             <%= select_tag :product_type , options_for_select([['Physical','physical'],['Digital','digital']]), :style => "width:310px;"  %>
-
           </div>
           <%= f.fields_for :contents, Content.new do |c| %>
 
@@ -73,56 +72,71 @@
           <%= f.hidden_field :code , :value => @product.code %>
           <div class="settingsinput bdBnone">
             <label>&nbsp;</label>
-            <input type="submit" value="&nbsp;Broadcast&nbsp;" class="uploastyle2">
-            <%= link_to 'Cancel', profile_products_path , :type=> "button", :class => "uploastyle3" %>
+            <input type="submit" value="&nbsp;Broadcast&nbsp;" class="uploastyle2" id="product_submit" />
+            <%= link_to 'disable', profile_product_delete_path(@product.code) ,:method => :delete ,:type=> "button", :id=>"product_disable", :class => "uploastyle3",:style => "display:none;" %>
           </div>
           <div class="clearboth"></div>
         </div>
- <% end %>
-        <div class="iteamlisting">
-          <div class="previewimg"></div>
-          <div class="prodcutimg"><img id="product_preview_img" src="<%= asset_path('cover.png') %>" width="300" height="257" alt="Product IMG" /></div>
-          <div class="prodcut_content">
-            <h5 id="product_title_preview">Product Heading Goes Here</h5>
-            <p id="product_description_preview">A landmark design from Charles and...</p>
-          </div>
-          <div class="fulldiv">
-            <div class="priceprduct">
-              <span class="bigtext" id="price_1_preview">$0</span>
-              <span class="smalltext" id="price_2_preview">$0</span>
-            </div>
-            <div class="priceprduct">
-              <span class="bigtext" id="price_3_preview">$0</span>
-              <span class="smalltext">Post (AU)</span>
-            </div>
-            <div class="priceprduct last">
-              <span class="bigtext" id="quantity_preview">0</span>
-              <span class="smalltext">Left</span>
-            </div>
-          </div>
-          <div class="clearfix"></div>
-          <hr/>
-          <div class="prodcutbottom" >
-            <span style="font-size: 1.4em;"><%=  from_code_url(@product.code) %></span>
-            &nbsp;<%=  link_to image_tag(asset_path('view_external_link.png')),from_code_url(@product.code, :target => "_blank") %>
-            <br/><br/>
-            <div class="fb-share-button" data-href="<%= from_code_url(@product.code) %>" data-type="button"></div>
-            <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= from_code_url(@product.code) %>" data-text="I am selling online!" data-via="airspace" data-count="none" data-hashtags="airspace"></a>
-            <a href="mailto:?subject=I am selling using airspace&body=<%= from_code_url(@product.code) %>">
-              <img src="<%= asset_path('email.png') %>" style="height: 20px;margin-top: -15px;"/>
-            </a>
-          </div>
-          <!-- <div class="prodcutbottom">
-            <input type="button" value="&nbsp;Start Selling&nbsp;" class="uploastyle2">
-          </div> -->
+
+
+    <div class="iteamlisting">
+      <div class="previewimg"></div>
+      <div class="prodcutimg"><img id="product_preview_img" src="<%= asset_path('cover.png') %>" width="300" height="257" alt="Product IMG" /></div>
+      <div id="product_cover" style="display: none;">
+          <%= f.fields_for :image, Image.new do |c| %>
+
+              <div class="settingsinput whitebg">
+                <div class="uploadimage textaligncenter" style="background: url(<%= asset_path('cloud.png') %>) no-repeat;background-size:50px 40px;width:50px;margin: auto;">
+                  <%= c.file_field :attachment , :style => "filter: alpha(opacity=0);opacity: 0;" %>
+
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+          <% end %>
+      </div>
+      <div class="prodcut_content">
+        <h5 id="product_title_preview">Product Heading Goes Here</h5>
+        <p id="product_description_preview">A landmark design from Charles and...</p>
+      </div>
+      <div class="fulldiv">
+        <div class="priceprduct">
+          <span class="bigtext" id="price_1_preview">$0</span>
+          <span class="smalltext" id="price_2_preview">$0</span>
         </div>
+        <div class="priceprduct">
+          <span class="bigtext" id="price_3_preview">$0</span>
+          <span class="smalltext">Post (AU)</span>
+        </div>
+        <div class="priceprduct last">
+          <span class="bigtext" id="quantity_preview">0</span>
+          <span class="smalltext">Left</span>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <hr/>
+      <div class="prodcutbottom" >
+        <span style="font-size: 1.4em;"><%=  from_code_url(@product.code) %></span>
+        &nbsp;<%=  link_to image_tag(asset_path('view_external_link.png')),from_code_url(@product.code), :target => "_blank" %>
+        <br/><br/>
+        <div class="fb-share-button" data-href="<%= from_code_url(@product.code) %>" data-type="button"></div>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= from_code_url(@product.code) %>" data-text="I am selling online!" data-via="airspace" data-count="none" data-hashtags="airspace"></a>
+        <a href="mailto:?subject=I am selling using airspace&body=<%= from_code_url(@product.code) %>">
+          <img src="<%= asset_path('email.png') %>" style="height: 20px;margin-top: -15px;"/>
+        </a>
+      </div>
+      <!-- <div class="prodcutbottom">
+        <input type="button" value="&nbsp;Start Selling&nbsp;" class="uploastyle2">
+      </div> -->
+    </div>
+ <% end %>
+
 
 <script>
-    function readURL(input) {
+    function readURL(input,is_image) {
 
         if (input.files && input.files[0]) {
             var reader = new FileReader();
-
+            reader.readAsDataURL(input.files[0]);
             //reader.onprogress = function(e){
             //    var val = parseInt(e.loaded / e.total)* 100;
             //    $("#progress_percentage").html(val + "%");
@@ -133,13 +147,16 @@
             setTimeout(function(){$("#progress_percentage").html("75%");$(".barprocess").width("75%");},750);
             setTimeout(function(){$("#progress_percentage").html("100%");$(".barprocess").width("100%");},1100);
 
+            if(is_image){
+                reader.onload = function (e) {
 
-            reader.onload = function (e) {
-                $('#product_preview_img').attr('src', e.target.result);
+                    $('#product_preview_img').attr('src', e.target.result);
+                }
+            }else{
+                $('#product_preview_img').attr('src', "<%= asset_path('cover.png') %>");
+                $("#product_cover").show();
             }
 
-
-            reader.readAsDataURL(input.files[0]);
         }
     }
 
@@ -162,15 +179,39 @@
                 filename = filename.substring(1);
             }
             console.log(filename);
+
             $("#product_contents_attributes_0_cover_name").val(filename);
             $("#remove_attachment").show();
-        }
-        $(".barprocess").width("0%");
-        $("#progress_percentage").html("0%");
+            $(".barprocess").width("0%");
+            $("#progress_percentage").html("0%");
 
-        readURL(this);
+            readURL(this,is_image_file(filename.split('.').pop()));
+        }
+    });
+
+
+    $("#product_image_attributes_attachment").change(function(){
+
+        var reader = new FileReader();
+        reader.readAsDataURL(this.files[0]);
+        reader.onload = function (e) {
+
+                $('#product_preview_img').attr('src', e.target.result);
+        }
 
     });
+
+
+
+    function is_image_file(ext){
+        ext = ext.toLowerCase();
+        if(ext == 'png' ||ext == 'bmp' ||ext == 'gif' ||ext == 'jpeg' ||ext == 'ico' ||ext == 'jpg'){
+            return true;
+        }   else    {
+            return false;
+        }
+
+    }
 
     $("#product_name").keyup(function(){
         $("#product_title_preview").html($(this).val());

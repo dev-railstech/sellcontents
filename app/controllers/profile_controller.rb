@@ -13,15 +13,19 @@ class ProfileController < ApplicationController
 
   def create_product
     @product = Product.create params[:product]
+    unless params[:product][:image_attributes].present?
+      file = File.open("#{Rails.root}/public/cover.png")
+      image = Image.new
+      image.attachment = file
+      image.save
+      @product.image = image
+      @product.save
+    end
+    respond_to do |format|
+      format.html {redirect_to from_code_url(@product.code), :notice => "Congrts, your product is created successfully"}
+      format.js
+    end
 
-    file = File.open("#{Rails.root}/public/cover.png")
-    image = Image.new
-    image.attachment = file
-    image.save
-    @product.image = image
-
-    @product.save
-    redirect_to from_code_url(@product.code), :notice => "Congrts, your product is created successfully"
   end
 
   #Saves new uploaded attachment
