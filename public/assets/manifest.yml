@@ -3,6 +3,8 @@ add_new_customers.png: add_new_customers-040c0c3b4b384b62d49f29f53e1f3212.png
 add_new_customers/index.png: add_new_customers-040c0c3b4b384b62d49f29f53e1f3212.png
 add_new_user.png: add_new_user-97dc3d9a618f4986dcbd717124b1721b.png
 add_new_user/index.png: add_new_user-97dc3d9a618f4986dcbd717124b1721b.png
+addnewcustomer.png: addnewcustomer-94f39bb7f6ae43b35922404ea29a78bd.png
+addnewcustomer/index.png: addnewcustomer-94f39bb7f6ae43b35922404ea29a78bd.png
 alert_icon.png: alert_icon-7fc3e18446331e37c075a0517d1fe700.png
 alert_icon/index.png: alert_icon-7fc3e18446331e37c075a0517d1fe700.png
 all_icon.png: all_icon-56aae06943c38e11ece24fca198dfe82.png
@@ -45,6 +47,8 @@ card_details.png: card_details-bb371ec51db6a01dc03dac469236995d.png
 card_details/index.png: card_details-bb371ec51db6a01dc03dac469236995d.png
 chart.png: chart-791b3964ab6348640d9e2fcdfa06dfa6.png
 chart/index.png: chart-791b3964ab6348640d9e2fcdfa06dfa6.png
+cloud.png: cloud-16885a72fde8bbf0ec297f62c69f7354.png
+cloud/index.png: cloud-16885a72fde8bbf0ec297f62c69f7354.png
 cloud_icon.png: cloud_icon-c38474fb389e1db9f6f3d768e6be1d41.png
 cloud_icon/index.png: cloud_icon-c38474fb389e1db9f6f3d768e6be1d41.png
 clouds.png: clouds-376a281083d73fc59d2d1c1f74fb2b76.png
@@ -53,6 +57,8 @@ compose.png: compose-6b36dcd8a6018d07b8293029026ad049.png
 compose/index.png: compose-6b36dcd8a6018d07b8293029026ad049.png
 connetaccicon.png: connetaccicon-56e37d18fd4d7c26ccabaecf85385c01.png
 connetaccicon/index.png: connetaccicon-56e37d18fd4d7c26ccabaecf85385c01.png
+cover.png: cover-bd076e5c467dae618716cd3f400608ab.png
+cover/index.png: cover-bd076e5c467dae618716cd3f400608ab.png
 credit_card.png: credit_card-b4a27478129b3ccbb714159f695aa231.png
 credit_card/index.png: credit_card-b4a27478129b3ccbb714159f695aa231.png
 credit_cardnew.png: credit_cardnew-01e4de36bae152596fc0cf35e68e92b3.png
@@ -75,6 +81,8 @@ dropbox.png: dropbox-bbbc313b3a984a681f615d893e7fb4b4.png
 dropbox/index.png: dropbox-bbbc313b3a984a681f615d893e7fb4b4.png
 earn.png: earn-53b90f4de08ef7b2ee6a062069a1087d.png
 earn/index.png: earn-53b90f4de08ef7b2ee6a062069a1087d.png
+email.jpg: email-78b50dbf2d0d2527dce6530dc5f39b52.jpg
+email/index.jpg: email-78b50dbf2d0d2527dce6530dc5f39b52.jpg
 email.png: email-929412d2ef087f766f2c1945f6899da4.png
 email/index.png: email-929412d2ef087f766f2c1945f6899da4.png
 email_icon.png: email_icon-d7d841beb1e273c0678eaf026b1570c4.png
@@ -175,6 +183,8 @@ refresh_icon.png: refresh_icon-3613d9eab2e59dbdd4c8211cce29132b.png
 refresh_icon/index.png: refresh_icon-3613d9eab2e59dbdd4c8211cce29132b.png
 reply.png: reply-aab0fe59148f72aacd90dd9d53e21b5c.png
 reply/index.png: reply-aab0fe59148f72aacd90dd9d53e21b5c.png
+searchbut.png: searchbut-b9bee1731184cfce5aabae2d25a177bf.png
+searchbut/index.png: searchbut-b9bee1731184cfce5aabae2d25a177bf.png
 set_price.png: set_price-ac67fde9961b0688170b8a2dc1c0c336.png
 set_price/index.png: set_price-ac67fde9961b0688170b8a2dc1c0c336.png
 setting_icon.png: setting_icon-4082b4975dbc8ee83d9607c0d8a0ef96.png
@@ -223,16 +233,18 @@ userimgtop.png: userimgtop-c820bc7464abf43adecc9e22fce7c17b.png
 userimgtop/index.png: userimgtop-c820bc7464abf43adecc9e22fce7c17b.png
 userprofile1.png: userprofile1-51a15541dfcf5f34eb8cc32de56cb129.png
 userprofile1/index.png: userprofile1-51a15541dfcf5f34eb8cc32de56cb129.png
+view_external_link.png: view_external_link-8e8a373c3574a972c410c276107a92d3.png
+view_external_link/index.png: view_external_link-8e8a373c3574a972c410c276107a92d3.png
 visa_card.png: visa_card-754a1a7580845cba7efccf49b1afcfb3.png
 visa_card/index.png: visa_card-754a1a7580845cba7efccf49b1afcfb3.png
 website_logo.png: website_logo-0715d24c326f321c735a6904e8bf8545.png
 website_logo/index.png: website_logo-0715d24c326f321c735a6904e8bf8545.png
 website_logo2.png: website_logo2-df55c66e3bd9d7870b9111de595a2c6e.png
 website_logo2/index.png: website_logo2-df55c66e3bd9d7870b9111de595a2c6e.png
-application.js: application-7b67bb3ade7a002166240166f59e3183.js
-application/index.js: application-7b67bb3ade7a002166240166f59e3183.js
-application.css: application-a047adfd4a87494015044fd28583d985.css
-application/index.css: application-a047adfd4a87494015044fd28583d985.css
+application.js: application-30708dc93cfecce635ab36df6bbfa995.js
+application/index.js: application-30708dc93cfecce635ab36df6bbfa995.js
+application.css: application-dbc066772f9530da36b633d4b5a7b12c.css
+application/index.css: application-dbc066772f9530da36b633d4b5a7b12c.css
 fonts/ALLER.TTF: fonts/ALLER-303c3483f811e6170f49e22d52cc6ac2.TTF
 fonts/ALLER/index.TTF: fonts/ALLER-303c3483f811e6170f49e22d52cc6ac2.TTF
 fonts/ALLER_BDIT.TTF: fonts/ALLER_BDIT-01ff6d2d492445f645c9f2da62884433.TTF
