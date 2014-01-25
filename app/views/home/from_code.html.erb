@@ -1,10 +1,7 @@
 <div class="prodcutimg">
 
-  <% if @product.contents.first.attachment.content_type and @product.contents.first.attachment.content_type.include?("image") %>
-      <%= image_tag  @product.contents.first.attachment.url, :width => "480", :height => "560" %>
-<% else %>
-      <%= image_tag @product.image.attachment.url, :width => "480", :height => "560" if @product.image %>
-<% end %>
+      <%= image_tag cover_image(@product), :width => "480", :height => "560", :alt => "Product image" %>
+
   <div class="pricetag"><%= number_to_currency @product.price %></div>
 </div>
 
@@ -64,7 +61,10 @@
 
 </div>
 
-<div class="leftdivlogo"><a href="#"><img src="/assets/logo.png" border="0" alt="" width="37" height="41"/></a></div>
+<div class="leftdivlogo">
+  <%= link_to image_tag(asset_path("logo.png")),'#', :height => "41" , :width => "37", :border => "0" %>
+
+</div>
 
 
 <div class="clearboth"></div>

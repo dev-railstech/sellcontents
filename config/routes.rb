@@ -21,14 +21,21 @@ SellContent::Application.routes.draw do
   get 'profile/products/new' => "profile#new_product" , :as => :new_profile_product
   post 'profile/products/create' => "profile#create_product" , :as => :create_profile_product
 
+
   get '/profile/bought_orders' => "profile#bought_orders", :as => :profile_bought_orders
   get '/profile/sold_orders' => "profile#sold_orders", :as => :profile_sold_orders
   get '/profile/bought_order/:id' => "profile#bought_order", :as => :profile_bought_order
+  get '/profile/bought_order/:id/download' => 'profile#download_order' , :as => :profile_download_order
   get '/profile/sold_order/:id' => "profile#sold_order", :as => :profile_sold_order
 
 
+  resources :products
+  resources :orders
+  resources :tasks
+
   #Should be at the bottom
   get "/:code" => "home#from_code", :as => :from_code
+
 
 
   # The priority is based upon order of creation:

@@ -1,6 +1,8 @@
 class ProfileController < ApplicationController
   before_filter :authenticate_user!
 
+  layout "sell", :only => [ :bought_order ]
+
   #Lists current_user's contents
   def products
     @products = current_user.products.active
@@ -111,6 +113,13 @@ class ProfileController < ApplicationController
   def bought_order
     @order = current_user.bought_orders.find(params[:id])
     @product = @order.product
+  end
+
+  def download_order
+    @order = current_user.bought_orders.find(params[:id])
+    @product = @order.product
+    data = open(@product.contents.first.attachment.url)
+    send_data data.read, :type => data.content_type, :x_sendfile => true
   end
 
   #List my bought orders

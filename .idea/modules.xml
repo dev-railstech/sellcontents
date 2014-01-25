@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../prms/.idea/prms.iml" filepath="$PROJECT_DIR$/../prms/.idea/prms.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/sell_content.iml" filepath="$PROJECT_DIR$/.idea/sell_content.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../taskfish/.idea/taskfish.iml" filepath="$PROJECT_DIR$/../taskfish/.idea/taskfish.iml" />
     </modules>
   </component>
 </project>
