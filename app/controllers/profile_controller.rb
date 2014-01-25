@@ -1,5 +1,5 @@
 class ProfileController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user! , :verify_user
 
   layout "sell", :only => [ :bought_order ]
 
@@ -128,5 +128,7 @@ class ProfileController < ApplicationController
 
   end
 
-
+  def verify_user
+      redirect_to "/" , :notice => "Working to resolve this issue"
+  end
 end
